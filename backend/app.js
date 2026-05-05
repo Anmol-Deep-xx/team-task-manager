@@ -63,3 +63,13 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 module.exports = app;
+
+const corsOptions = {
+  origin:
+    process.env.FRONTEND_ORIGIN === "*"
+      ? "*"
+      : process.env.FRONTEND_ORIGIN || "http://localhost:5173",
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
