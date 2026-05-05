@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Scheduler Companion</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Task Scheduler</h1>
+        <button id="logoutBtn" class="ghost hidden" type="button">Log out</button>
+      </header>
+
+      <section id="statusBox" class="status">Ready</section>
+
+      <section id="loginView" class="card">
+        <h2>Sign in</h2>
+        <label class="field">
+          <span>API Base URL</span>
+          <input id="baseUrlInput" type="text" value="http://localhost:5001/api" />
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input id="emailInput" type="email" autocomplete="username" />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input id="passwordInput" type="password" autocomplete="current-password" />
+        </label>
+        <button id="loginBtn" class="primary" type="button">Login</button>
+      </section>
+
+      <section id="mainView" class="hidden">
+        <section class="card">
+          <h2>Your projects</h2>
+          <div class="project-row">
+            <select id="projectSelect"></select>
+            <button id="refreshBtn" class="ghost" type="button">Refresh</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Today's assigned tasks</h2>
+          <ul id="taskList" class="task-list"></ul>
+          <p id="emptyTasks" class="muted hidden">No tasks due today for this project.</p>
+        </section>
+
+        <section class="card timer-card">
+          <h2>Active timer</h2>
+          <p id="activeTaskName" class="timer-task">No active timer</p>
+          <p id="elapsedLabel" class="timer-time">00:00:00</p>
+          <button id="stopTimerBtn" class="danger" type="button" disabled>Stop and log time</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+  </html>

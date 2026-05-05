@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Task Scheduler Companion",
+  "description": "View your projects, check today's tasks, and track time from Chrome.",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Task Scheduler"
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "http://localhost:5001/*",
+    "http://127.0.0.1:5001/*"
+  ]
+}

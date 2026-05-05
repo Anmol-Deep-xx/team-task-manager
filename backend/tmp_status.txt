@@ -1,0 +1,7 @@
+[
+  "open",
+  "in_progress",
+  "review",
+  "complete",
+  "dependence"
+]
